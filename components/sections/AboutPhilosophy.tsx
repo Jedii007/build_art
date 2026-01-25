@@ -27,7 +27,7 @@ export default function AboutPhilosophy() {
 
           <div className="about-philosophy__image">
             <Image
-              src="/assets/images/image35.png"
+              src="/assets/images/image31.png"
               alt="BuildArt Global Philosophy"
               fill
               sizes="100vw"
