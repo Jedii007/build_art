@@ -14,7 +14,7 @@ export default function SocialProof() {
 
           <div className="social-proof__image social-proof__image--large">
             <Image
-              src="/assets/images/home/img00001.jpeg"
+                src="/assets/images/home/studio-05.jpeg"
               alt="Exhibition Stand Project"
               fill
               sizes="100vw"
@@ -23,7 +23,8 @@ export default function SocialProof() {
 
           <div className="social-proof__image social-proof__image--small">
             <Image
-              src="/assets/images/home/studio-05.jpeg"
+             
+              src="/assets/images/exhibition-2.jpeg"
               alt="Office Fit-Out Project"
               fill
               sizes="100vw"
@@ -74,7 +75,7 @@ export default function SocialProof() {
 
           <div className="social-proof__image social-proof__image--large">
             <Image
-              src="/assets/images/exhibition-2.jpeg"
+                     src="/assets/images/home/img00001.jpeg"
               alt="Exhibition Environment"
               fill
               sizes="100vw"
