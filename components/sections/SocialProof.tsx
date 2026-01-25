@@ -23,7 +23,6 @@ export default function SocialProof() {
 
           <div className="social-proof__image social-proof__image--small">
             <Image
-             
               src="/assets/images/exhibition-2.jpeg"
               alt="Office Fit-Out Project"
               fill
