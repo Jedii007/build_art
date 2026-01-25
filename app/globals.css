@@ -317,7 +317,7 @@ h6 {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-white);
-  font-size: clamp(0.75rem, 2vw, 1.2rem);
+  font-size: clamp(0.75rem, 1vw, 1rem);
 }
 
 .hero__service-center {
