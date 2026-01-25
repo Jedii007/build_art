@@ -73,7 +73,7 @@ export default function SocialProof() {
 
           <div className="social-proof__image social-proof__image--large">
             <Image
-              src="/assets/images/home/exhibition-3.jpg"
+              src="/assets/images/exhibition-2.jpeg"
               alt="Exhibition Environment"
               fill
               sizes="100vw"
