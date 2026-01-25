@@ -17,7 +17,7 @@ export default function Trust() {
 
           <div className="trust__image">
             <Image
-              src="/assets/images/office-1.png"
+              src="/assets/images/home/office-1.png"
               alt="BuildArt Global Project"
               fill
               sizes="100vw"

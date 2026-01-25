@@ -47,7 +47,7 @@ export default function Persuasion() {
 
           <div className="persuasion__image">
              <Image
-              src="/assets/images/nastuh-abootalebi-ZtC4_rPCRXA-unsplash.jpg"
+              src="/assets/images/"
               alt="BuildArt Global Project"
               fill
               sizes="100vw"
