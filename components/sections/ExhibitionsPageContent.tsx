@@ -57,13 +57,13 @@ export const exhibitionsContent: ServicePageContentProps = {
   scope: {
     headline: "Our Full Exhibition Scope",
     image: {
-      src: "/assets/images/exhibition-6.jpg",
+      src: "/assets/images/exhibition2.jpeg",
       alt: "BuildArt Global Exhibition",
     },
     imageText:
       "Exhibition stands today are not just structures - they are operational environments. That's why we deliver a fully integrated exhibition solution, covering both the physical build and the technical infrastructure required for modern exhibitions.",
     contentImage: {
-      src: "/assets/images/exhibition-7.jpeg",
+      src: "/assets/images/exhibition1.jpeg",
       alt: "BuildArt Global Exhibition",
     },
     listHeadline: "Our exhibition services include:",
@@ -145,7 +145,7 @@ export const exhibitionsContent: ServicePageContentProps = {
         description:
           "Structured layouts, unified branding, and smooth coordination across multiple stakeholders.",
         image: {
-          src: "/assets/images/image3.png",
+          src: "/assets/images/p50.jpeg",
           alt: "Country Pavilions & Group Stands",
         },
       },
@@ -155,7 +155,7 @@ export const exhibitionsContent: ServicePageContentProps = {
         description:
           "Flexible solutions balancing efficiency, reusability, and strong visual identity.",
         image: {
-          src: "/assets/images/image5.png",
+          src: "/assets/images/hybridstand.png",
           alt: "Modular & Hybrid Stands",
         },
       },
@@ -175,7 +175,7 @@ export const exhibitionsContent: ServicePageContentProps = {
       "Installation runs smoothly without last-minute fixes",
     ],
     image: {
-      src: "/assets/images/image6.png",
+      src: "/assets/images/exhibition5.png",
       alt: "BuildArt Global Exhibition",
     },
     closingText:
@@ -190,7 +190,7 @@ export const exhibitionsContent: ServicePageContentProps = {
         description:
           "We understand your event, stand size, objectives, audience, technical needs, and timelines.",
         image: {
-          src: "/assets/images/image36.avif",
+          src: "/assets/images/exhibtionbrief.jpeg",
           alt: "Discovery & Briefing",
         },
       },
@@ -200,7 +200,7 @@ export const exhibitionsContent: ServicePageContentProps = {
         description:
           "Tailored concepts and 3D visuals developed with technical feasibility in mind.",
         image: {
-          src: "/assets/images/image30.png",
+          src: "/assets/images/exhibition6.jpeg",
           alt: "Design & Visualization",
         },
       },
