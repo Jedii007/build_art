@@ -135,7 +135,7 @@ export const exhibitionsContent: ServicePageContentProps = {
         description:
           "Architectural presence for brands that require scale, visibility, and spatial impact.",
         image: {
-          src: "/assets/images/exhibition-2.jpeg",
+          src: "/assets/images/doubledeck.png",
           alt: "Large-Scale & Double-Deck Stands",
         },
       },
