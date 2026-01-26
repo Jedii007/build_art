@@ -54,7 +54,7 @@ const defaultSteps: ProcessStep[] = [
     title: "Support & Follow-Through",
     description: "We ensure your space performs exactly as intended.",
     image: {
-      src: "/assets/images/home/image20.webp",
+      src: "/assets/images/exhibition.jpg",
       alt: "Support & Follow-Through",
     },
   },

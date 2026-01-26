@@ -35,7 +35,7 @@ export default function Trust() {
 
           <div className="trust__image">
             <Image
-              src="/assets/images/home.webp"
+              src="/assets/images/102662.jpg"
               alt="BuildArt Global Project"
               fill
               sizes="100vw"
