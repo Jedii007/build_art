@@ -21,7 +21,7 @@ const homeInteriorsContent: ServicePageContentProps = {
     description:
       "We design and deliver bespoke residential interiors that balance aesthetics, comfort, and functionality - thoughtfully planned, technically sound, and executed with care from start to finish. From layout and finishes to lighting and electrical integration, we manage the entire process so your home feels considered, calm, and complete.",
     image: {
-      src: "/assets/images/home/image12.png",
+      src: "/assets/images/home/image2.png",
       alt: "Home Fit-Out & Residential Interiors",
     },
     primaryCta: {
@@ -72,13 +72,13 @@ const homeInteriorsContent: ServicePageContentProps = {
   scope: {
     headline: "Our Residential Fit-Out Scope",
     image: {
-      src: "/assets/images/image31.png",
+      src: "/assets/images/home-interior-3.jpg",
       alt: "Residential Fit-Out Scope",
     },
     imageText:
       "Design - Build - Electrical - Lighting. We provide a fully integrated home fit-out solution, including:",
     contentImage: {
-      src: "/assets/images/home/image32.png",
+      src: "/assets/images/home-interior-4.jpg",
       alt: "Residential Fit-Out Scope",
     },
     listHeadline: "Our residential services include:",
@@ -200,7 +200,7 @@ const homeInteriorsContent: ServicePageContentProps = {
   why: {
     headline: "Why Homeowners Choose BuildArt Global",
     image: {
-      src: "/assets/images/image35.png",
+      src: "/assets/images/home-interior-10.jpg",
       alt: "Residential Interiors",
     },
     caption: "Attention to detail. Respect for your space.",
@@ -257,7 +257,7 @@ const homeInteriorsContent: ServicePageContentProps = {
     closingText:
       "Even though a home project is personal, it deserves the same level of structure and professionalism as any major build.",
     image: {
-      src: "/assets/images/image10.png",
+      src: "/assets/images/home-interior-11.jpg",
       alt: "Residential Experience",
     },
     caption: "The same discipline as major builds, applied to homes.",
