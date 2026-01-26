@@ -21,7 +21,7 @@ const officePortfolioImages = [
   ],
 ];
 
-const officeFitoutContent: ServicePageContentProps = {
+export const officeFitoutContent: ServicePageContentProps = {
   hero: {
     headline: "Office Renovation & Commercial Fit-Out Services in the UAE",
     description:

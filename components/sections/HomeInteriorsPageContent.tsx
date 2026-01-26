@@ -21,7 +21,7 @@ const homePortfolioImages = [
   ],
 ];
 
-const homeInteriorsContent: ServicePageContentProps = {
+export const homeInteriorsContent: ServicePageContentProps = {
   hero: {
     headline: "Home Fit-Out & Residential Interior Services in the UAE",
     description:

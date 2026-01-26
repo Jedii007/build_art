@@ -198,14 +198,12 @@ export default function ExhibitionPricingCalculator() {
                   ))}
                 </ul>
               </div>
-              <a
-                href="https://homeservice-neon.vercel.app/kairo-form"
+              <Link
+                href="/contact"
                 className="pricing-calculator__estimate-button"
-                target="_blank"
-                rel="noreferrer"
               >
                 Get a Full Audit & BOQ
-              </a>
+              </Link>
             </div>
 
             <div className="pricing-calculator__note">
