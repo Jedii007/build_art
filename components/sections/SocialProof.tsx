@@ -48,7 +48,7 @@ export default function SocialProof() {
 
           <div className="social-proof__image social-proof__image--small">
             <Image
-              src="/assets/images/office.jpg"
+              src="/assets/images/home-story.jpg"
               alt="Commercial Space"
               fill
               sizes="100vw"
