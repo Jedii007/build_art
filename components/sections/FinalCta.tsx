@@ -39,7 +39,7 @@ const defaultSecondaryCta: CtaLink = {
 };
 
 const defaultImage: CtaImage = {
-  src: "/assets/images/home/image33.png",
+  src: "/assets/images/juliette-contin-aETBbsCWBpo-unsplash.jpg",
   alt: "BuildArt Global Project",
 };
 
