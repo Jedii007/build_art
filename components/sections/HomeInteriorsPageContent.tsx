@@ -5,9 +5,9 @@ import ServicePageContent, {
 const homeProcessImages = [
   "/assets/images/image1.png",
   "/assets/images/image35.png",
-  "/assets/images/image3.png",
-  "/assets/images/image4.png",
-  "/assets/images/image5.png",
+  "/assets/images/home-interior-6.jpg",
+  "/assets/images/home-interior-8.png",
+  "/assets/images/home-interior-9.jpg",
 ];
 
 const homePortfolioImages = [
@@ -78,7 +78,7 @@ const homeInteriorsContent: ServicePageContentProps = {
     imageText:
       "Design - Build - Electrical - Lighting. We provide a fully integrated home fit-out solution, including:",
     contentImage: {
-      src: "/assets/images/home-interior-4.jpg",
+      src: "/assets/images/home-interior-5.jpg",
       alt: "Residential Fit-Out Scope",
     },
     listHeadline: "Our residential services include:",
@@ -136,7 +136,7 @@ const homeInteriorsContent: ServicePageContentProps = {
       "Spaces feel warm, balanced, and easy to live in",
     ],
     image: {
-      src: "/assets/images/home/image34.png",
+      src: "/assets/images/home-interior-7.jpg",
       alt: "Residential Lighting & Electrical",
     },
     closingText:
@@ -200,7 +200,7 @@ const homeInteriorsContent: ServicePageContentProps = {
   why: {
     headline: "Why Homeowners Choose BuildArt Global",
     image: {
-      src: "/assets/images/image6.png",
+      src: "/assets/images/home-interior-10.jpg",
       alt: "Residential Interiors",
     },
     caption: "Attention to detail. Respect for your space.",
