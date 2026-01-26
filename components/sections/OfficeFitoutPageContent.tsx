@@ -57,7 +57,7 @@ const officeFitoutContent: ServicePageContentProps = {
   who: {
     headline: "Who This Service Is For",
     image: {
-      src: "/assets/images/stretchedoffice.jpg",
+      src: "/assets/images/officing.jpg",
       alt: "Commercial Office Fit-Out",
     },
     intro: "This service is ideal for:",
