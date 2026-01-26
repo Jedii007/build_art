@@ -36,9 +36,10 @@ const defaultSteps: ProcessStep[] = [
   },
   {
     title: "Design & Strategy",
-    description: "Tailored concepts backed by 3D visualization (where relevant).",
+    description:
+      "Tailored concepts backed by 3D visualization (where relevant).",
     image: {
-      src: "/assets/images/home/office-3.png",
+      src: "/assets/images/process-image-2.jpg",
       alt: "Design & Strategy",
     },
   },
@@ -84,8 +85,7 @@ export default function Process({
 
       <div className={`${elementPrefix}cards`}>
         {steps.map((step, index) => {
-          const stepNumber =
-            step.number ?? String(index + 1).padStart(2, "0");
+          const stepNumber = step.number ?? String(index + 1).padStart(2, "0");
           const image = (
             <div className={`${elementPrefix}image`}>
               <Image
@@ -98,9 +98,7 @@ export default function Process({
           );
           const stepContent = (
             <div className={`${elementPrefix}step`}>
-              <div className={`${elementPrefix}step-number`}>
-                {stepNumber}
-              </div>
+              <div className={`${elementPrefix}step-number`}>{stepNumber}</div>
               <h3 className={`${elementPrefix}step-title`}>{step.title}</h3>
               <p className={`${elementPrefix}step-description`}>
                 {step.description}
