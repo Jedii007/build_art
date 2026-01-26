@@ -11,8 +11,8 @@ const officeProcessImages = [
 ];
 
 const officePortfolioImages = [
-  ["/assets/images/image29.png", "/assets/images/image30.png"],
-  ["/assets/images/image31.png", "/assets/images/home/image32.png"],
+  ["/assets/images/image29.png","/assets/images/office-interior-3-01.jpeg"],
+  ["/assets/images/office-interior-25-01.jpg", "/assets/images/office-interior-17-03.jpg"],
 ];
 
 const officeFitoutContent: ServicePageContentProps = {
@@ -57,7 +57,7 @@ const officeFitoutContent: ServicePageContentProps = {
   who: {
     headline: "Who This Service Is For",
     image: {
-      src: "/assets/images/image17.jpeg",
+      src: "/assets/images/stretchedoffice.jpg",
       alt: "Commercial Office Fit-Out",
     },
     intro: "This service is ideal for:",
@@ -72,13 +72,13 @@ const officeFitoutContent: ServicePageContentProps = {
   scope: {
     headline: "Our Commercial Fit-Out Scope",
     image: {
-      src: "/assets/images/image16.jpg",
+       src: "/assets/images/img00006.jpeg",
       alt: "Commercial Fit-Out Scope",
     },
     imageText:
       "Design - Build - Electrical - Technology. We provide a fully integrated office renovation solution, including:",
     contentImage: {
-      src: "/assets/images/img00006.jpeg",
+       src: "/assets/images/image16.jpg",
       alt: "Commercial Fit-Out Scope",
     },
     listHeadline: "Our fit-out services include:",
@@ -205,7 +205,7 @@ const officeFitoutContent: ServicePageContentProps = {
   why: {
     headline: "Why Businesses Choose BuildArt Global",
     image: {
-      src:"/assets/images/image18.jpeg",
+      src:"/assets/images/office-interior-40-02.jpg",
       alt: "Commercial Fit-Out",
     },
     caption: "Office renovations impact people, productivity, and operations.",
@@ -262,7 +262,7 @@ const officeFitoutContent: ServicePageContentProps = {
     closingText:
       "The same discipline that delivers exhibitions on fixed deadlines ensures office projects are delivered with control and confidence.",
     image: {
-      src: "/assets/images/image28.png",
+      src: "/assets/images/office-interior-42-01.jpg",
       alt: "Office Fit-Out Experience",
     },
     caption: "Experience that keeps commercial projects controlled and reliable.",
@@ -303,7 +303,7 @@ const officeFitoutContent: ServicePageContentProps = {
       },
     ],
     image: {
-      src: "/assets/images/home/image33.png",
+      src: "/assets/images/office-interior-5-01.jpg",
       alt: "Commercial Fit-Out",
     },
   },
@@ -320,7 +320,7 @@ const officeFitoutContent: ServicePageContentProps = {
       label: "Contact Our Commercial Team",
     },
     image: {
-      src: "/assets/images/home/image34.png",
+        src: "/assets/images/office-interior-40-01.jpg",
       alt: "BuildArt Global Project",
     },
   },
