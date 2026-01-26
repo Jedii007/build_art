@@ -7,12 +7,18 @@ const homeProcessImages = [
   "/assets/images/image35.png",
   "/assets/images/home-interior-6.jpg",
   "/assets/images/home-interior-8.png",
-  "/assets/images/home-interior-9.jpg",
+  "/assets/images/home-interior-13.jpg",
 ];
 
 const homePortfolioImages = [
-  ["/assets/images/image28.png", "/assets/images/image33.png"],
-  ["/assets/images/image10.png", "/assets/images/image11.png"],
+  [
+    "/assets/images/home-interior-14.jpg",
+    "/assets/images/home-interior-16.jpg",
+  ],
+  [
+    "/assets/images/home-interior-17.jpg",
+    "/assets/images/home-interior-15.jpg",
+  ],
 ];
 
 const homeInteriorsContent: ServicePageContentProps = {
@@ -315,7 +321,7 @@ const homeInteriorsContent: ServicePageContentProps = {
       label: "Contact Our Residential Team",
     },
     image: {
-      src: "/assets/images/image13.png",
+      src: "/assets/images/home-interior-cta.jpg",
       alt: "BuildArt Global Project",
     },
   },
