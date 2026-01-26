@@ -2263,11 +2263,16 @@ h6 {
   }
 
   .about-process__item {
+    padding: 0;
     height: auto;
     display: flex;
     position: relative;
     margin-bottom: 4rem;
     flex-direction: column;
+  }
+
+  .process__item--1 .process__item--2 .process__item--3 .process__item--4 {
+    padding: 0;
   }
 
   .about-process__item--1 .about-process__image,
@@ -2286,8 +2291,8 @@ h6 {
   .about-process__item--4 .about-process__step,
   .about-process__item--5 .about-process__step {
     order: 2;
+    padding: 0;
     width: 100%;
-    padding: 2rem 0 0 0;
   }
 
   .about-process__cta {
@@ -2391,17 +2396,18 @@ h6 {
 
 @media (max-width: 768px) {
   .about-trust__grid {
-    grid-template-rows: auto auto;
     min-height: auto;
+    grid-template-rows: auto auto;
   }
 
   .about-trust__image {
-    grid-column: 1 / 13;
     height: 60vh;
     position: relative;
+    grid-column: 1 / 13;
   }
 
   .about-trust__content {
+    margin-top: 30rem;
     grid-column: 1 / 13;
     gap: clamp(3rem, 6vh, 5rem);
   }
