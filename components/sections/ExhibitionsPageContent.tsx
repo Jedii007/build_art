@@ -370,13 +370,13 @@ export const exhibitionsContent: ServicePageContentProps = {
       },
     ],
     image: {
-      src: "/assets/images/image11.png",
+      src: "/assets/images/exhibition-stand-2-side-open-10x8-01.jpg",
       alt: "Exhibition Stand Design",
     },
   },
   finalCta: {
     image: {
-      src: "/assets/images/image23.avif",
+      src: "/assets/images/doubledeck.png",
       alt: "BuildArt Global Project",
     },
   },
