@@ -4336,6 +4336,529 @@ h6 {
   font-size: clamp(0.95rem, 1.2vw, 1.1rem);
 }
 
+.planner-page {
+  background-color: var(--color-cream);
+}
+
+.office-planner {
+  position: relative;
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  background-color: var(--color-cream);
+}
+
+.office-planner__hero {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.75rem);
+  max-width: 860px;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+  padding: 0 clamp(2rem, 3vw, 3rem);
+}
+
+.office-planner__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-weight: 500;
+  color: var(--color-gold);
+  font-size: clamp(0.7rem, 0.9vw, 0.9rem);
+}
+
+.office-planner__headline {
+  margin: 0;
+  line-height: 1;
+  font-weight: 300;
+  color: var(--color-navy);
+  font-size: clamp(2.6rem, 6vw, 5rem);
+}
+
+.office-planner__subcopy {
+  margin: 0;
+  font-weight: 300;
+  color: var(--color-navy);
+  font-size: clamp(1.05rem, 1.8vw, 1.6rem);
+}
+
+.office-planner__note {
+  margin: 0;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+}
+
+.office-planner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.office-planner__button {
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+  padding: clamp(0.9rem, 2vh, 1.1rem) clamp(1.6rem, 2vw, 2.2rem);
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-navy);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.office-planner__button--solid {
+  color: var(--color-white);
+  background-color: var(--color-navy);
+}
+
+.office-planner__button--solid:hover {
+  color: var(--color-navy);
+  background-color: transparent;
+}
+
+.office-planner__button--ghost {
+  color: var(--color-navy);
+  background-color: transparent;
+}
+
+.office-planner__button--ghost:hover {
+  color: var(--color-white);
+  background-color: var(--color-navy);
+}
+
+.office-planner__panel {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.office-planner__flow {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+.office-planner__step-card {
+  background-color: var(--color-cream);
+  border-radius: 0;
+  border: 1px solid rgba(23, 31, 51, 0.12);
+  padding: clamp(2rem, 3vw, 3rem);
+  box-shadow: 0 30px 60px rgba(13, 19, 33, 0.08);
+}
+
+.office-planner__step-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.office-planner__step-count {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: rgba(23, 31, 51, 0.6);
+}
+
+.office-planner__progress {
+  width: 100%;
+  height: 6px;
+  background: rgba(23, 31, 51, 0.1);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.office-planner__progress-bar {
+  display: block;
+  height: 100%;
+  background-color: var(--color-navy);
+  transition: width 0.3s ease;
+}
+
+.office-planner__step-title {
+  margin: 0;
+  font-weight: 500;
+  color: var(--color-navy);
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+.office-planner__step-subcopy {
+  margin: 0.5rem 0 0;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+}
+
+.office-planner__step-body {
+  margin-top: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.office-planner__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.office-planner__label {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-navy);
+}
+
+.office-planner__input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.office-planner__input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid rgba(23, 31, 51, 0.2);
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border-radius: 0;
+}
+
+.office-planner__input:focus {
+  outline: 2px solid rgba(23, 31, 51, 0.4);
+  outline-offset: 2px;
+}
+
+.office-planner__input-suffix {
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.office-planner__quick-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.office-planner__chip {
+  border: 1px solid rgba(23, 31, 51, 0.2);
+  background-color: transparent;
+  padding: 0.55rem 0.9rem;
+  border-radius: 0;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.office-planner__chip--active {
+  border-color: var(--color-navy);
+  background-color: rgba(23, 31, 51, 0.08);
+}
+
+.office-planner__option-grid {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.office-planner__option {
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  padding: clamp(1.1rem, 2vw, 1.5rem);
+  border-radius: 0;
+  background-color: var(--color-cream);
+  border: 1px solid rgba(23, 31, 51, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: all 0.2s ease;
+}
+
+.office-planner__option:hover {
+  border-color: rgba(23, 31, 51, 0.3);
+  transform: translateY(-2px);
+}
+
+.office-planner__option--active {
+  border-color: var(--color-navy);
+  background-color: rgba(23, 31, 51, 0.08);
+}
+
+.office-planner__option-title {
+  font-weight: 600;
+  color: var(--color-navy);
+  font-size: 1rem;
+}
+
+.office-planner__option-desc {
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 0.9rem;
+}
+
+.office-planner__microcopy {
+  margin-top: 1.5rem;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.9rem;
+}
+
+.office-planner__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.office-planner__nav-button {
+  flex: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  border: 1px solid var(--color-navy);
+  padding: 0.85rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.office-planner__nav-button--solid {
+  color: var(--color-white);
+  background-color: var(--color-navy);
+}
+
+.office-planner__nav-button--solid:hover {
+  color: var(--color-navy);
+  background-color: transparent;
+}
+
+.office-planner__nav-button--ghost {
+  background-color: transparent;
+  color: var(--color-navy);
+}
+
+.office-planner__nav-button--ghost:hover {
+  color: var(--color-white);
+  background-color: var(--color-navy);
+}
+
+.office-planner__nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.office-planner__estimate {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.office-planner__estimate-card {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  padding: clamp(2rem, 3vw, 2.75rem);
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.office-planner__estimate-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.office-planner__estimate-value {
+  font-weight: 500;
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+}
+
+.office-planner__estimate-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-weight: 300;
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+.office-planner__estimate-includes {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.office-planner__estimate-includes-title {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.office-planner__estimate-includes-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+  font-weight: 300;
+  font-size: 0.95rem;
+}
+
+.office-planner__estimate-includes-item {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.office-planner__estimate-button {
+  margin-top: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: var(--color-navy);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-white);
+  padding: 0.85rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.office-planner__estimate-button:hover {
+  color: var(--color-white);
+  background-color: transparent;
+}
+
+.office-planner__expectation {
+  margin: 0;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 0.95rem;
+}
+
+.office-planner__summary {
+  position: sticky;
+  top: clamp(6rem, 10vh, 8rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.office-planner__summary-card {
+  background-color: var(--color-navy);
+  border: 1px solid rgba(23, 31, 51, 0.12);
+  border-radius: 0;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.office-planner__summary-title {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.7rem;
+  opacity: 0.7;
+  color: var(--color-white);
+}
+
+.office-planner__summary-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.office-planner__summary-list span {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.office-planner__summary-list strong {
+  font-weight: 500;
+  color: var(--color-white);
+  font-size: 0.95rem;
+}
+
+.office-planner__summary-estimate {
+  background-color: var(--color-navy);
+  padding: 1.2rem 1.5rem;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border: 1px solid rgba(23, 31, 51, 0.12);
+}
+
+.office-planner__summary-estimate span {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.office-planner__summary-estimate strong {
+  font-weight: 600;
+  color: var(--color-white);
+  font-size: 1.2rem;
+}
+
+.office-planner__summary-note {
+  margin: 0;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 0.95rem;
+}
+
+.office-planner__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.office-planner__form-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.office-planner__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-navy);
+}
+
+.office-planner__field input {
+  border: 1px solid rgba(23, 31, 51, 0.2);
+  padding: 0.85rem 1rem;
+  border-radius: 0;
+  font-size: 1rem;
+}
+
+.office-planner__field input:focus {
+  outline: 2px solid rgba(23, 31, 51, 0.4);
+  outline-offset: 2px;
+}
+
+.office-planner__submit {
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  border: 1px solid var(--color-navy);
+  padding: 0.85rem 1.5rem;
+  color: var(--color-white);
+  background-color: var(--color-navy);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.office-planner__submit:hover {
+  color: var(--color-navy);
+  background-color: transparent;
+}
+
 @media (max-width: 1024px) {
   .pricing-calculator__panel {
     grid-template-columns: 1fr;
@@ -4346,6 +4869,14 @@ h6 {
   }
 
   .pricing-calculator__estimate {
+    position: static;
+  }
+
+  .office-planner__panel {
+    grid-template-columns: 1fr;
+  }
+
+  .office-planner__summary {
     position: static;
   }
 }
@@ -4362,6 +4893,23 @@ h6 {
   .pricing-calculator__link {
     width: 100%;
     text-align: center;
+  }
+
+  .office-planner__actions {
+    flex-direction: column;
+  }
+
+  .office-planner__button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .office-planner__nav {
+    flex-direction: column;
+  }
+
+  .office-planner__nav-button {
+    width: 100%;
   }
 }
 
