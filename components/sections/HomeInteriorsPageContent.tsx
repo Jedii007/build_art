@@ -273,10 +273,6 @@ const homeInteriorsContent: ServicePageContentProps = {
         meta: "Property type - Size - Location",
       }))
     ),
-    cta: {
-      href: "/portfolio",
-      label: "View Residential Portfolio",
-    },
   },
   faq: {
     headline: "Frequently Asked Questions",
