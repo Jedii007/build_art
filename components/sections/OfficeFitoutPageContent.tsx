@@ -278,10 +278,6 @@ const officeFitoutContent: ServicePageContentProps = {
         meta: "Project type - Size - Industry",
       }))
     ),
-    cta: {
-      href: "/portfolio",
-      label: "View Commercial Portfolio",
-    },
   },
   faq: {
     headline: "Frequently Asked Questions",

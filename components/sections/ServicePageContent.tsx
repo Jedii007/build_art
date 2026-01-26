@@ -118,7 +118,7 @@ type PortfolioSection = {
       meta: string;
     }>
   >;
-  cta: CtaLink;
+  cta?: CtaLink;
 };
 
 type FaqSection = {
@@ -586,16 +586,18 @@ export default function ServicePageContent({
             ))}
           </div>
 
-          <div className="container">
-            <div className="exhibition__portfolio-cta">
-              <Link
-                href={portfolio.cta.href}
-                className="exhibition__portfolio-button"
-              >
-                {portfolio.cta.label}
-              </Link>
+          {portfolio.cta ? (
+            <div className="container">
+              <div className="exhibition__portfolio-cta">
+                <Link
+                  href={portfolio.cta.href}
+                  className="exhibition__portfolio-button"
+                >
+                  {portfolio.cta.label}
+                </Link>
+              </div>
             </div>
-          </div>
+          ) : null}
         </section>
       ) : null}
 
