@@ -320,7 +320,7 @@ const officeFitoutContent: ServicePageContentProps = {
       label: "Contact Our Commercial Team",
     },
     image: {
-        src: "/assets/images/image20.webp",
+        src: "/assets/images/home/image20.webp",
       alt: "BuildArt Global Project",
     },
   },
