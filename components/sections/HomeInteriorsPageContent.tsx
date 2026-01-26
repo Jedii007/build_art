@@ -4,7 +4,7 @@ import ServicePageContent, {
 
 const homeProcessImages = [
   "/assets/images/image1.png",
-  "/assets/images/home/image2.png",
+  "/assets/images/image35.png",
   "/assets/images/image3.png",
   "/assets/images/image4.png",
   "/assets/images/image5.png",
@@ -21,7 +21,7 @@ const homeInteriorsContent: ServicePageContentProps = {
     description:
       "We design and deliver bespoke residential interiors that balance aesthetics, comfort, and functionality - thoughtfully planned, technically sound, and executed with care from start to finish. From layout and finishes to lighting and electrical integration, we manage the entire process so your home feels considered, calm, and complete.",
     image: {
-      src: "/assets/images/image35.png",
+      src: "/assets/images/home/image2.png",
       alt: "Home Fit-Out & Residential Interiors",
     },
     primaryCta: {
@@ -40,7 +40,7 @@ const homeInteriorsContent: ServicePageContentProps = {
     description:
       "BuildArt Global provides home fit-out and residential interior services for clients who want more than decoration - they want spaces that feel right to live in.",
     image: {
-      src: "/assets/images/image36.avif",
+      src: "/assets/images/home-interior.jpg",
       alt: "BuildArt Global Residential Interiors",
     },
     imageDescription:
@@ -72,13 +72,13 @@ const homeInteriorsContent: ServicePageContentProps = {
   scope: {
     headline: "Our Residential Fit-Out Scope",
     image: {
-      src: "/assets/images/image31.png",
+      src: "/assets/images/home-interior-3.jpg",
       alt: "Residential Fit-Out Scope",
     },
     imageText:
       "Design - Build - Electrical - Lighting. We provide a fully integrated home fit-out solution, including:",
     contentImage: {
-      src: "/assets/images/home/image32.png",
+      src: "/assets/images/home-interior-4.jpg",
       alt: "Residential Fit-Out Scope",
     },
     listHeadline: "Our residential services include:",
@@ -271,7 +271,7 @@ const homeInteriorsContent: ServicePageContentProps = {
           alt: "Residential Project",
         },
         meta: "Property type - Size - Location",
-      }))
+      })),
     ),
   },
   faq: {
