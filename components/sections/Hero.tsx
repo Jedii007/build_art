@@ -59,8 +59,8 @@ export default function Hero() {
             <Link href="/contact" className="btn btn--primary">
               Get Started
             </Link>
-            <Link href="/portfolio" className="btn btn--secondary">
-              View Our Work
+            <Link href="/exhibitions/pricing" className="btn btn--secondary">
+              Estimate Stand Cost
             </Link>
           </div>
         </div>

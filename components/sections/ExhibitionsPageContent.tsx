@@ -16,8 +16,8 @@ export const exhibitionsContent: ServicePageContentProps = {
       label: "Request a Stand Concept",
     },
     secondaryCta: {
-      href: "/portfolio",
-      label: "View Exhibition Projects",
+      href: "/exhibitions/pricing",
+      label: "Estimate Stand Cost",
     },
     trustLine: "Dubai World Trade Centre - Expo City Dubai - ADNEC Abu Dhabi",
   },
@@ -339,6 +339,10 @@ export const exhibitionsContent: ServicePageContentProps = {
         },
       ],
     ],
+    cta: {
+      href: "/portfolio",
+      label: "View Exhibition Projects",
+    },
   },
   faq: {
     headline: "Frequently Asked Questions",
