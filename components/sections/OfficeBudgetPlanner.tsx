@@ -94,7 +94,16 @@ const constraintOptions = [
   },
 ] as const;
 
-const stepMeta = [
+type ConstraintId = (typeof constraintOptions)[number]["id"];
+
+type StepMeta = {
+  title: string;
+  description?: string;
+  microcopy?: string;
+  cta?: string;
+};
+
+const stepMeta: StepMeta[] = [
   {
     title: "Approximate Office Size",
     description:
@@ -148,7 +157,7 @@ const stepMeta = [
     title: "Refine Your Budget Plan",
     description: "Share your details and we will validate your estimate.",
   },
-] as const;
+];
 
 const formatCurrency = (value: number) =>
   new Intl.NumberFormat("en-AE", {
@@ -162,11 +171,19 @@ const roundToHundred = (value: number) => Math.round(value / 100) * 100;
 export default function OfficeBudgetPlanner() {
   const [stepIndex, setStepIndex] = useState(0);
   const [sizeInput, setSizeInput] = useState("180");
-  const [conditionId, setConditionId] = useState(conditionOptions[0].id);
-  const [positioningId, setPositioningId] = useState(positioningOptions[1].id);
-  const [usageId, setUsageId] = useState(usageOptions[1].id);
-  const [systemsId, setSystemsId] = useState(systemsOptions[1].id);
-  const [constraints, setConstraints] = useState<string[]>(["fixed"]);
+  const [conditionId, setConditionId] = useState<
+    (typeof conditionOptions)[number]["id"]
+  >(conditionOptions[0].id);
+  const [positioningId, setPositioningId] = useState<
+    (typeof positioningOptions)[number]["id"]
+  >(positioningOptions[1].id);
+  const [usageId, setUsageId] = useState<(typeof usageOptions)[number]["id"]>(
+    usageOptions[1].id,
+  );
+  const [systemsId, setSystemsId] = useState<
+    (typeof systemsOptions)[number]["id"]
+  >(systemsOptions[1].id);
+  const [constraints, setConstraints] = useState<ConstraintId[]>(["fixed"]);
   const [lead, setLead] = useState({
     name: "",
     company: "",
@@ -236,10 +253,12 @@ export default function OfficeBudgetPlanner() {
     setSizeInput(event.target.value);
   };
 
-  const handleToggleConstraint = (id: string) => {
+  const handleToggleConstraint = (id: ConstraintId) => {
     setConstraints((prev) => {
       const isActive = prev.includes(id);
-      let next = isActive ? prev.filter((item) => item !== id) : [...prev, id];
+      let next: ConstraintId[] = isActive
+        ? prev.filter((item) => item !== id)
+        : [...prev, id];
       if (id === "flexible" && !isActive) {
         next = ["flexible"];
       } else if (id !== "flexible" && !isActive) {
