@@ -21,7 +21,7 @@ const officeFitoutContent: ServicePageContentProps = {
     description:
       "We design and deliver functional, brand-aligned office environments that support productivity, collaboration, and long-term business growth - built with technical precision and full turnkey execution. From planning and approvals to electrical systems, lighting, and delivery, we manage the entire process so your business keeps moving forward with minimal disruption.",
     image: {
-      src: "/assets/images/home/office-1.png",
+      src: "/assets/images/home/image15.jpg",
       alt: "Office Renovation & Commercial Fit-Out",
     },
     primaryCta: {
@@ -57,7 +57,7 @@ const officeFitoutContent: ServicePageContentProps = {
   who: {
     headline: "Who This Service Is For",
     image: {
-      src: "/assets/images/home/office-3.png",
+      src: "/assets/images/image17.jpeg",
       alt: "Commercial Office Fit-Out",
     },
     intro: "This service is ideal for:",
@@ -72,13 +72,13 @@ const officeFitoutContent: ServicePageContentProps = {
   scope: {
     headline: "Our Commercial Fit-Out Scope",
     image: {
-      src: "/assets/images/image13.png",
+      src: "/assets/images/image16.jpg",
       alt: "Commercial Fit-Out Scope",
     },
     imageText:
       "Design - Build - Electrical - Technology. We provide a fully integrated office renovation solution, including:",
     contentImage: {
-      src: "/assets/images/home/image15.jpg",
+      src: "/assets/images/img00006.jpeg",
       alt: "Commercial Fit-Out Scope",
     },
     listHeadline: "Our fit-out services include:",
