@@ -30,7 +30,7 @@ const defaultSteps: ProcessStep[] = [
     title: "Discovery & Vision",
     description: "We start by understanding your goals and context.",
     image: {
-      src: "/assets/images/home/image-2.jpg",
+      src: "/assets/images/discovery.webp",
       alt: "Discovery & Vision",
     },
   },
