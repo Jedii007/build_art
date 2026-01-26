@@ -15,7 +15,7 @@ const officePortfolioImages = [
   ["/assets/images/office-interior-25-01.jpg", "/assets/images/office-interior-17-03.jpg"],
 ];
 
-const officeFitoutContent: ServicePageContentProps = {
+export const officeFitoutContent: ServicePageContentProps = {
   hero: {
     headline: "Office Renovation & Commercial Fit-Out Services in the UAE",
     description:

@@ -56,14 +56,9 @@ export default function Hero() {
           </h1>
 
           <div className="hero__ctas">
-            <a
-              href="https://homeservice-neon.vercel.app/kairo-form"
-              className="btn btn--primary"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <Link href="/contact" className="btn btn--primary">
               Get Started
-            </a>
+            </Link>
             <Link href="/exhibitions/pricing" className="btn btn--secondary">
               Estimate Stand Cost
             </Link>

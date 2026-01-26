@@ -15,7 +15,7 @@ const homePortfolioImages = [
   ["/assets/images/image10.png", "/assets/images/image11.png"],
 ];
 
-const homeInteriorsContent: ServicePageContentProps = {
+export const homeInteriorsContent: ServicePageContentProps = {
   hero: {
     headline: "Home Fit-Out & Residential Interior Services in the UAE",
     description:
