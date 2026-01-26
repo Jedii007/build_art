@@ -11,7 +11,7 @@ const homeProcessImages = [
 ];
 
 const homePortfolioImages = [
-  ["/assets/images/image8.png", "/assets/images/image9.png"],
+  ["/assets/images/image28.png", "/assets/images/image33.png"],
   ["/assets/images/image10.png", "/assets/images/image11.png"],
 ];
 
@@ -72,13 +72,13 @@ const homeInteriorsContent: ServicePageContentProps = {
   scope: {
     headline: "Our Residential Fit-Out Scope",
     image: {
-      src: "/assets/images/home-interior-3.jpg",
+      src: "/assets/images/image31.png",
       alt: "Residential Fit-Out Scope",
     },
     imageText:
       "Design - Build - Electrical - Lighting. We provide a fully integrated home fit-out solution, including:",
     contentImage: {
-      src: "/assets/images/home-interior-5.jpg",
+      src: "/assets/images/home/image32.png",
       alt: "Residential Fit-Out Scope",
     },
     listHeadline: "Our residential services include:",
@@ -200,7 +200,7 @@ const homeInteriorsContent: ServicePageContentProps = {
   why: {
     headline: "Why Homeowners Choose BuildArt Global",
     image: {
-      src: "/assets/images/home-interior-10.jpg",
+      src: "/assets/images/image35.png",
       alt: "Residential Interiors",
     },
     caption: "Attention to detail. Respect for your space.",
@@ -257,7 +257,7 @@ const homeInteriorsContent: ServicePageContentProps = {
     closingText:
       "Even though a home project is personal, it deserves the same level of structure and professionalism as any major build.",
     image: {
-      src: "/assets/images/image7.png",
+      src: "/assets/images/image10.png",
       alt: "Residential Experience",
     },
     caption: "The same discipline as major builds, applied to homes.",
