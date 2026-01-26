@@ -3,11 +3,11 @@ import ServicePageContent, {
 } from "components/sections/ServicePageContent";
 
 const officeProcessImages = [
-  "/assets/images/image21.png",
-  "/assets/images/home/image22.png",
-  "/assets/images/image23.avif",
-  "/assets/images/image24.avif",
-  "/assets/images/image26.png",
+  "/assets/images/moroso-showroom.jpeg",
+  "/assets/images/floorplan.jpg",
+    "/assets/images/home/image22.png",
+  "/assets/images/home/buildandrevo.webp",
+  "/assets/images/img00003.jpeg",
 ];
 
 const officePortfolioImages = [
@@ -205,7 +205,7 @@ const officeFitoutContent: ServicePageContentProps = {
   why: {
     headline: "Why Businesses Choose BuildArt Global",
     image: {
-      src: "/assets/images/image27.png",
+      src:"/assets/images/image18.jpeg",
       alt: "Commercial Fit-Out",
     },
     caption: "Office renovations impact people, productivity, and operations.",
