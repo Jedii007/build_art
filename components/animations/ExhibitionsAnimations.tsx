@@ -37,7 +37,7 @@ export default function ExhibitionsAnimations() {
               y: 60,
               duration: 1,
             },
-            "-=0.6"
+            "-=0.6",
           )
           .from(
             headline,
@@ -46,7 +46,7 @@ export default function ExhibitionsAnimations() {
               y: 30,
               duration: 0.8,
             },
-            "-=0.4"
+            "-=0.4",
           )
           .from(
             text,
@@ -55,7 +55,7 @@ export default function ExhibitionsAnimations() {
               y: 20,
               duration: 0.8,
             },
-            "-=0.5"
+            "-=0.5",
           )
           .from(
             ctas,
@@ -64,7 +64,7 @@ export default function ExhibitionsAnimations() {
               y: 20,
               duration: 0.6,
             },
-            "-=0.4"
+            "-=0.4",
           )
           .from(
             trust,
@@ -73,18 +73,22 @@ export default function ExhibitionsAnimations() {
               y: 20,
               duration: 0.6,
             },
-            "-=0.3"
+            "-=0.3",
           );
       }
 
       const typesSection = document.querySelector(".exhibition__types");
-      const typesHeadline = document.querySelector(".exhibition__types-headline");
-      const typesStage =
-        document.querySelector<HTMLElement>(".exhibition__types-stage");
-      const typesWrapper =
-        document.querySelector<HTMLElement>(".exhibition__types-wrapper");
+      const typesHeadline = document.querySelector(
+        ".exhibition__types-headline",
+      );
+      const typesStage = document.querySelector<HTMLElement>(
+        ".exhibition__types-stage",
+      );
+      const typesWrapper = document.querySelector<HTMLElement>(
+        ".exhibition__types-wrapper",
+      );
       const typeCards = gsap.utils.toArray<HTMLElement>(
-        ".exhibition__type-card"
+        ".exhibition__type-card",
       );
 
       if (
@@ -143,10 +147,10 @@ export default function ExhibitionsAnimations() {
 
       const processSection = document.querySelector(".exhibition__process");
       const processHeadline = document.querySelector(
-        ".exhibition__process-headline"
+        ".exhibition__process-headline",
       );
       const processCards = gsap.utils.toArray<HTMLElement>(
-        ".exhibition__process-item"
+        ".exhibition__process-item",
       );
 
       if (processSection && processHeadline && processCards.length > 0) {
@@ -162,51 +166,125 @@ export default function ExhibitionsAnimations() {
           },
         });
 
-        ScrollTrigger.create({
-          trigger: processHeadline,
-          start: "bottom top",
-          end: "bottom top-=1",
-          onEnter: () => {
-            processSection.classList.add("exhibition__process--dark");
-          },
-          onLeaveBack: () => {
-            processSection.classList.remove("exhibition__process--dark");
-          },
+        const mm = gsap.matchMedia();
+
+        mm.add("(min-width: 769px)", () => {
+          ScrollTrigger.create({
+            trigger: processHeadline,
+            start: "bottom top",
+            end: "bottom top-=1",
+            onEnter: () => {
+              processSection.classList.add("exhibition__process--dark");
+            },
+            onLeaveBack: () => {
+              processSection.classList.remove("exhibition__process--dark");
+            },
+          });
+
+          processCards.forEach((card, index) => {
+            const image = card.querySelector<HTMLElement>(
+              ".exhibition__process-image",
+            );
+            const step = card.querySelector<HTMLElement>(
+              ".exhibition__process-step",
+            );
+
+            if (!image || !step) return;
+
+            if (index < processCards.length - 1) {
+              ScrollTrigger.create({
+                trigger: card,
+                start: "top top",
+                end: () => `+=${window.innerHeight}`,
+                pin: true,
+                pinSpacing: false,
+              });
+
+              gsap.to(image, {
+                "--pseudo-y": "-100%",
+                scrollTrigger: {
+                  trigger: card,
+                  start: "top 85%",
+                  toggleActions: "play none none reverse",
+                },
+                duration: 0.8,
+                ease: "power3.out",
+              });
+
+              gsap.from(step, {
+                opacity: 0,
+                y: 40,
+                scrollTrigger: {
+                  trigger: card,
+                  start: "top 80%",
+                  toggleActions: "play none none reverse",
+                },
+                duration: 0.8,
+                ease: "power3.out",
+              });
+
+              gsap.to(card, {
+                scale: 0.7,
+                rotateZ: -15,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: processCards[index + 1] as HTMLElement,
+                  start: "top bottom",
+                  end: "top top",
+                  scrub: true,
+                },
+              });
+            } else {
+              gsap.to(image, {
+                "--pseudo-y": "-100%",
+                scrollTrigger: {
+                  trigger: card,
+                  start: "top 60%",
+                  toggleActions: "play none none reverse",
+                },
+                duration: 1.2,
+                ease: "power3.inOut",
+              });
+
+              gsap.from(step, {
+                opacity: 0,
+                y: 40,
+                scrollTrigger: {
+                  trigger: card,
+                  start: "top 80%",
+                  toggleActions: "play none none reverse",
+                },
+                duration: 0.8,
+                ease: "power3.out",
+              });
+
+              ScrollTrigger.create({
+                trigger: card,
+                start: "top center",
+                onEnter: () => {
+                  processSection.classList.remove("exhibition__process--dark");
+                },
+                onLeaveBack: () => {
+                  processSection.classList.add("exhibition__process--dark");
+                },
+              });
+            }
+          });
         });
 
-        processCards.forEach((card, index) => {
-          const image = card.querySelector<HTMLElement>(
-            ".exhibition__process-image"
-          );
-          const step = card.querySelector<HTMLElement>(
-            ".exhibition__process-step"
-          );
+        mm.add("(max-width: 768px)", () => {
+          processCards.forEach((card) => {
+            const image = card.querySelector<HTMLElement>(
+              ".exhibition__process-image",
+            );
+            const step = card.querySelector<HTMLElement>(
+              ".exhibition__process-step",
+            );
 
-          if (!image || !step) return;
-
-          if (index < processCards.length - 1) {
-            ScrollTrigger.create({
-              trigger: card,
-              start: "top top",
-              end: () => `+=${window.innerHeight}`,
-              pin: true,
-              pinSpacing: false,
-            });
+            if (!image || !step) return;
 
             gsap.to(image, {
               "--pseudo-y": "-100%",
-              scrollTrigger: {
-                trigger: card,
-                start: "top 85%",
-                toggleActions: "play none none reverse",
-              },
-              duration: 0.8,
-              ease: "power3.out",
-            });
-
-            gsap.from(step, {
-              opacity: 0,
-              y: 40,
               scrollTrigger: {
                 trigger: card,
                 start: "top 80%",
@@ -216,52 +294,18 @@ export default function ExhibitionsAnimations() {
               ease: "power3.out",
             });
 
-            gsap.to(card, {
-              scale: 0.7,
-              rotateZ: -15,
-              ease: "none",
-              scrollTrigger: {
-                trigger: processCards[index + 1] as HTMLElement,
-                start: "top bottom",
-                end: "top top",
-                scrub: true,
-              },
-            });
-          } else {
-            gsap.to(image, {
-              "--pseudo-y": "-100%",
-              scrollTrigger: {
-                trigger: card,
-                start: "top 60%",
-                toggleActions: "play none none reverse",
-              },
-              duration: 1.2,
-              ease: "power3.inOut",
-            });
-
             gsap.from(step, {
               opacity: 0,
-              y: 40,
+              y: 30,
               scrollTrigger: {
                 trigger: card,
                 start: "top 80%",
                 toggleActions: "play none none reverse",
               },
-              duration: 0.8,
+              duration: 0.6,
               ease: "power3.out",
             });
-
-            ScrollTrigger.create({
-              trigger: card,
-              start: "top center",
-              onEnter: () => {
-                processSection.classList.remove("exhibition__process--dark");
-              },
-              onLeaveBack: () => {
-                processSection.classList.add("exhibition__process--dark");
-              },
-            });
-          }
+          });
         });
       }
 
@@ -269,17 +313,15 @@ export default function ExhibitionsAnimations() {
       if (faqSection) {
         const items = Array.from(
           faqSection.querySelectorAll<HTMLDetailsElement>(
-            ".exhibition__faq-item"
-          )
+            ".exhibition__faq-item",
+          ),
         );
 
         items.forEach((item) => {
           const answer = item.querySelector<HTMLElement>(
-            ".exhibition__faq-answer"
+            ".exhibition__faq-answer",
           );
-          const icon = item.querySelector<HTMLElement>(
-            ".exhibition__faq-icon"
-          );
+          const icon = item.querySelector<HTMLElement>(".exhibition__faq-icon");
 
           if (!answer) return;
 
@@ -290,11 +332,9 @@ export default function ExhibitionsAnimations() {
 
         items.forEach((item) => {
           const answer = item.querySelector<HTMLElement>(
-            ".exhibition__faq-answer"
+            ".exhibition__faq-answer",
           );
-          const icon = item.querySelector<HTMLElement>(
-            ".exhibition__faq-icon"
-          );
+          const icon = item.querySelector<HTMLElement>(".exhibition__faq-icon");
 
           if (!answer) return;
 
@@ -303,10 +343,10 @@ export default function ExhibitionsAnimations() {
               items.forEach((other) => {
                 if (other === item) return;
                 const otherAnswer = other.querySelector<HTMLElement>(
-                  ".exhibition__faq-answer"
+                  ".exhibition__faq-answer",
                 );
                 const otherIcon = other.querySelector<HTMLElement>(
-                  ".exhibition__faq-icon"
+                  ".exhibition__faq-icon",
                 );
 
                 if (other.open) other.open = false;
@@ -360,7 +400,9 @@ export default function ExhibitionsAnimations() {
           };
 
           item.addEventListener("toggle", handler);
-          cleanupCallbacks.push(() => item.removeEventListener("toggle", handler));
+          cleanupCallbacks.push(() =>
+            item.removeEventListener("toggle", handler),
+          );
         });
       }
     });

@@ -9,7 +9,6 @@ export default function HomeAnimations() {
     let ctx: gsap.Context | null = null;
     let isMounted = true;
 
-    const observers: IntersectionObserver[] = [];
     const intervals: number[] = [];
     const timeouts: number[] = [];
 
@@ -27,7 +26,7 @@ export default function HomeAnimations() {
 
       ctx = gsap.context(() => {
         const slides = Array.from(
-          document.querySelectorAll<HTMLImageElement>(".hero__bg-slide")
+          document.querySelectorAll<HTMLImageElement>(".hero__bg-slide"),
         );
 
         if (slides.length > 0) {
@@ -63,7 +62,9 @@ export default function HomeAnimations() {
         }
 
         const heroServiceLeft = document.querySelector(".hero__service-left");
-        const heroServiceCenter = document.querySelector(".hero__service-center");
+        const heroServiceCenter = document.querySelector(
+          ".hero__service-center",
+        );
         const heroServiceRight = document.querySelector(".hero__service-right");
         const heroTitle = document.querySelector(".hero__title");
         const heroCtas = document.querySelector(".hero__ctas");
@@ -92,7 +93,7 @@ export default function HomeAnimations() {
                 y: 0,
                 duration: 1,
               },
-              "-=0.8"
+              "-=0.8",
             )
             .from(
               heroServiceRight,
@@ -101,7 +102,7 @@ export default function HomeAnimations() {
                 x: 40,
                 duration: 1,
               },
-              "-=0.8"
+              "-=0.8",
             )
             .from(
               heroTitle,
@@ -110,7 +111,7 @@ export default function HomeAnimations() {
                 y: 60,
                 duration: 1.4,
               },
-              "-=0.5"
+              "-=0.5",
             )
             .from(
               heroCtas,
@@ -119,7 +120,7 @@ export default function HomeAnimations() {
                 y: 0,
                 duration: 0.8,
               },
-              "-=0.6"
+              "-=0.6",
             );
 
           gsap.to(heroTitle, {
@@ -168,63 +169,48 @@ export default function HomeAnimations() {
           }
 
           const words = Array.from(
-            introText.querySelectorAll<HTMLElement>(".word")
+            introText.querySelectorAll<HTMLElement>(".word"),
           );
-          let hasEntered = false;
 
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting && !hasEntered) {
-                  hasEntered = true;
-
-                  const tl = gsap.timeline({
-                    scrollTrigger: {
-                      trigger: introSection,
-                      start: "top top",
-                      end: `+=${words.length * 100}`,
-                      scrub: 1,
-                      pin: true,
-                    },
-                  });
-
-                  speedLines.forEach((line, index) => {
-                    tl.fromTo(
-                      line,
-                      {
-                        y: window.innerHeight,
-                        opacity: 0,
-                      },
-                      {
-                        y: -window.innerHeight,
-                        opacity: 1,
-                        duration: 0.5,
-                        ease: "none",
-                      },
-                      index * 0.2
-                    );
-                  });
-
-                  words.forEach((word, index) => {
-                    tl.to(
-                      word,
-                      {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.5,
-                        ease: "power2.out",
-                      },
-                      index * 0.1
-                    );
-                  });
-                }
-              });
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: introSection,
+              start: "top top",
+              end: `+=${words.length * 100}`,
+              scrub: 1,
+              pin: true,
             },
-            { threshold: 0.3 }
-          );
+          });
 
-          observer.observe(introSection);
-          observers.push(observer);
+          speedLines.forEach((line, index) => {
+            tl.fromTo(
+              line,
+              {
+                y: window.innerHeight,
+                opacity: 0,
+              },
+              {
+                y: -window.innerHeight,
+                opacity: 1,
+                duration: 0.5,
+                ease: "none",
+              },
+              index * 0.2,
+            );
+          });
+
+          words.forEach((word, index) => {
+            tl.to(
+              word,
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                ease: "power2.out",
+              },
+              index * 0.1,
+            );
+          });
         }
 
         const trustSection = document.querySelector(".trust");
@@ -232,170 +218,201 @@ export default function HomeAnimations() {
         const trustContent = document.querySelector(".trust__content");
 
         if (trustSection && trustContent) {
-          let hasEntered = false;
-
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting && !hasEntered) {
-                  hasEntered = true;
-
-                  gsap.from(trustImages, {
-                    opacity: 0,
-                    y: 40,
-                    duration: 0.8,
-                    stagger: 0.15,
-                    ease: "power3.out",
-                  });
-
-                  gsap.from(trustContent, {
-                    opacity: 0,
-                    y: 30,
-                    duration: 0.8,
-                    delay: 0.6,
-                    ease: "power3.out",
-                  });
-                }
-              });
+          gsap.from(trustImages, {
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: trustSection,
+              start: "top 80%",
+              toggleActions: "play none none none",
             },
-            { threshold: 0.2 }
-          );
+          });
 
-          observer.observe(trustSection);
-          observers.push(observer);
+          gsap.from(trustContent, {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            delay: 0.6,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: trustSection,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          });
         }
 
         const servicesSection = document.querySelector(".services");
         const servicesTitle = document.querySelector(".services__title");
         const cardsContainer = document.querySelector<HTMLElement>(
-          ".services__cards-container"
+          ".services__cards-container",
         );
-        const wrapper = document.querySelector<HTMLElement>(".services__wrapper");
+        const wrapper =
+          document.querySelector<HTMLElement>(".services__wrapper");
         const cards = gsap.utils.toArray<HTMLElement>(".service-card");
 
         if (servicesSection && cardsContainer && wrapper && cards.length > 0) {
-          let hasEntered = false;
+          if (servicesTitle) {
+            gsap.from(servicesTitle, {
+              opacity: 0,
+              y: 40,
+              duration: 0.8,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: servicesTitle,
+                start: "top 80%",
+                toggleActions: "play none none none",
+              },
+            });
+          }
 
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting && !hasEntered) {
-                  hasEntered = true;
+          const servicesMm = gsap.matchMedia();
 
-                  if (servicesTitle) {
-                    gsap.from(servicesTitle, {
-                      opacity: 0,
-                      y: 40,
-                      duration: 0.8,
-                      ease: "power3.out",
-                    });
-                  }
+          servicesMm.add("(min-width: 769px)", () => {
+            ScrollTrigger.create({
+              trigger: cardsContainer,
+              start: "top top",
+              end: "bottom bottom",
+              pin: wrapper,
+              pinSpacing: false,
+            });
 
-                  ScrollTrigger.create({
+            cards.forEach((card, index) => {
+              if (index > 0) {
+                gsap.set(card, { xPercent: 100 });
+              }
+            });
+
+            cards.forEach((card, index) => {
+              if (index === 0) return;
+
+              const progress = (index - 1) / cards.length;
+              const nextProgress = index / cards.length;
+
+              gsap.fromTo(
+                card,
+                { xPercent: 100 },
+                {
+                  xPercent: 0,
+                  ease: "none",
+                  scrollTrigger: {
                     trigger: cardsContainer,
-                    start: "top top",
-                    end: "bottom bottom",
-                    pin: wrapper,
-                    pinSpacing: false,
-                  });
+                    start: `top+=${progress * cardsContainer.offsetHeight} top`,
+                    end: `top+=${nextProgress * cardsContainer.offsetHeight} top`,
+                    scrub: true,
+                  },
+                },
+              );
+            });
+          });
 
-                  cards.forEach((card, index) => {
-                    if (index > 0) {
-                      gsap.set(card, { xPercent: 100 });
-                    }
-                  });
+          servicesMm.add("(max-width: 768px)", () => {
+            cards.forEach((card) => {
+              const bg = card.querySelector(".service-card__bg");
+              const content = card.querySelector(".service-card__content");
 
-                  cards.forEach((card, index) => {
-                    if (index === 0) return;
+              if (bg) {
+                gsap.from(bg, {
+                  opacity: 0,
+                  y: 30,
+                  duration: 0.8,
+                  ease: "power3.out",
+                  scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                  },
+                });
+              }
 
-                    const progress = (index - 1) / cards.length;
-                    const nextProgress = index / cards.length;
-
-                    gsap.fromTo(
-                      card,
-                      { xPercent: 100 },
-                      {
-                        xPercent: 0,
-                        ease: "none",
-                        scrollTrigger: {
-                          trigger: cardsContainer,
-                          start: `top+=${progress * cardsContainer.offsetHeight} top`,
-                          end: `top+=${nextProgress * cardsContainer.offsetHeight} top`,
-                          scrub: true,
-                        },
-                      }
-                    );
-                  });
-                }
-              });
-            },
-            { threshold: 0.1 }
-          );
-
-          observer.observe(servicesSection);
-          observers.push(observer);
+              if (content) {
+                gsap.from(content, {
+                  opacity: 0,
+                  y: 20,
+                  duration: 0.6,
+                  delay: 0.2,
+                  ease: "power3.out",
+                  scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                  },
+                });
+              }
+            });
+          });
         }
 
         const persuasionSection = document.querySelector(".persuasion");
         const persuasionHeader = document.querySelector(".persuasion__header");
-        const persuasionImages = document.querySelectorAll(".persuasion__image");
-        const persuasionBullets = document.querySelector(".persuasion__bullets");
+        const persuasionImages =
+          document.querySelectorAll(".persuasion__image");
+        const persuasionBullets = document.querySelector(
+          ".persuasion__bullets",
+        );
         const persuasionCta = document.querySelector(".persuasion__cta");
 
         if (persuasionSection) {
-          let hasEntered = false;
+          if (persuasionHeader) {
+            gsap.from(persuasionHeader, {
+              opacity: 0,
+              y: 40,
+              duration: 0.8,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: persuasionSection,
+                start: "top 80%",
+                toggleActions: "play none none none",
+              },
+            });
+          }
 
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting && !hasEntered) {
-                  hasEntered = true;
-
-                  if (persuasionHeader) {
-                    gsap.from(persuasionHeader, {
-                      opacity: 0,
-                      y: 40,
-                      duration: 0.8,
-                      ease: "power3.out",
-                    });
-                  }
-
-                  gsap.from(persuasionImages, {
-                    opacity: 0,
-                    y: 40,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    delay: 0.4,
-                    ease: "power3.out",
-                  });
-
-                  if (persuasionBullets) {
-                    gsap.from(persuasionBullets, {
-                      opacity: 0,
-                      y: 30,
-                      duration: 0.8,
-                      delay: 0.8,
-                      ease: "power3.out",
-                    });
-                  }
-
-                  if (persuasionCta) {
-                    gsap.from(persuasionCta, {
-                      opacity: 0,
-                      y: 20,
-                      duration: 0.6,
-                      delay: 1.2,
-                      ease: "power3.out",
-                    });
-                  }
-                }
-              });
+          gsap.from(persuasionImages, {
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            stagger: 0.1,
+            delay: 0.4,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: persuasionSection,
+              start: "top 80%",
+              toggleActions: "play none none none",
             },
-            { threshold: 0.2 }
-          );
+          });
 
-          observer.observe(persuasionSection);
-          observers.push(observer);
+          if (persuasionBullets) {
+            gsap.from(persuasionBullets, {
+              opacity: 0,
+              y: 30,
+              duration: 0.8,
+              delay: 0.8,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: persuasionSection,
+                start: "top 80%",
+                toggleActions: "play none none none",
+              },
+            });
+          }
+
+          if (persuasionCta) {
+            gsap.from(persuasionCta, {
+              opacity: 0,
+              y: 20,
+              duration: 0.6,
+              delay: 1.2,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: persuasionSection,
+                start: "top 80%",
+                toggleActions: "play none none none",
+              },
+            });
+          }
         }
 
         const processSection = document.querySelector(".process");
@@ -404,257 +421,277 @@ export default function HomeAnimations() {
         const processCta = document.querySelector(".process__cta");
 
         if (processSection && processHeadline && processCards.length > 0) {
-          let hasEntered = false;
-
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting && !hasEntered) {
-                  hasEntered = true;
-
-                  gsap.from(processHeadline, {
-                    opacity: 0,
-                    y: 80,
-                    duration: 0.8,
-                    ease: "power3.out",
-                  });
-
-                  ScrollTrigger.create({
-                    trigger: processHeadline,
-                    start: "bottom top",
-                    end: "bottom top-=1",
-                    onEnter: () => {
-                      processSection.classList.add("process--dark");
-                    },
-                    onLeaveBack: () => {
-                      processSection.classList.remove("process--dark");
-                    },
-                  });
-
-                  processCards.forEach((card, index) => {
-                    const image = card.querySelector<HTMLElement>(
-                      ".process__image"
-                    );
-                    const step = card.querySelector<HTMLElement>(".process__step");
-
-                    if (!image || !step) return;
-
-                    if (index < processCards.length - 1) {
-                      ScrollTrigger.create({
-                        trigger: card,
-                        start: "top top",
-                        end: () => `+=${window.innerHeight}`,
-                        pin: true,
-                        pinSpacing: false,
-                      });
-
-                      gsap.to(image, {
-                        "--pseudo-y": "-100%",
-                        scrollTrigger: {
-                          trigger: card,
-                          start: "top 85%",
-                          toggleActions: "play none none reverse",
-                        },
-                        duration: 0.8,
-                        ease: "power3.out",
-                      });
-
-                      gsap.from(step, {
-                        opacity: 0,
-                        y: 40,
-                        scrollTrigger: {
-                          trigger: card,
-                          start: "top 80%",
-                          toggleActions: "play none none reverse",
-                        },
-                        duration: 0.8,
-                        ease: "power3.out",
-                      });
-
-                      gsap.to(card, {
-                        scale: 0.7,
-                        rotateZ: -15,
-                        ease: "none",
-                        scrollTrigger: {
-                          trigger: processCards[index + 1],
-                          start: "top bottom",
-                          end: "top top",
-                          scrub: true,
-                        },
-                      });
-                    } else {
-                      gsap.to(image, {
-                        "--pseudo-y": "-100%",
-                        scrollTrigger: {
-                          trigger: card,
-                          start: "top 60%",
-                          toggleActions: "play none none reverse",
-                        },
-                        duration: 1.2,
-                        ease: "power3.inOut",
-                      });
-
-                      gsap.from(step, {
-                        opacity: 0,
-                        y: 40,
-                        scrollTrigger: {
-                          trigger: card,
-                          start: "top 80%",
-                          toggleActions: "play none none reverse",
-                        },
-                        duration: 0.8,
-                        ease: "power3.out",
-                      });
-
-                      ScrollTrigger.create({
-                        trigger: card,
-                        start: "top center",
-                        onEnter: () => {
-                          processSection.classList.remove("process--dark");
-                        },
-                        onLeaveBack: () => {
-                          processSection.classList.add("process--dark");
-                        },
-                      });
-                    }
-                  });
-
-                  if (processCta) {
-                    gsap.from(processCta, {
-                      opacity: 0,
-                      y: 20,
-                      scrollTrigger: {
-                        trigger: processCta,
-                        start: "top 90%",
-                        toggleActions: "play none none reverse",
-                      },
-                      duration: 0.6,
-                      ease: "power3.out",
-                    });
-                  }
-                }
-              });
+          gsap.from(processHeadline, {
+            opacity: 0,
+            y: 80,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: processHeadline,
+              start: "top 80%",
+              toggleActions: "play none none none",
             },
-            { threshold: 0.2 }
-          );
+          });
 
-          observer.observe(processSection);
-          observers.push(observer);
+          const processMm = gsap.matchMedia();
+
+          processMm.add("(min-width: 769px)", () => {
+            ScrollTrigger.create({
+              trigger: processHeadline,
+              start: "bottom top",
+              end: "bottom top-=1",
+              onEnter: () => {
+                processSection.classList.add("process--dark");
+              },
+              onLeaveBack: () => {
+                processSection.classList.remove("process--dark");
+              },
+            });
+
+            processCards.forEach((card, index) => {
+              const image = card.querySelector<HTMLElement>(".process__image");
+              const step = card.querySelector<HTMLElement>(".process__step");
+
+              if (!image || !step) return;
+
+              if (index < processCards.length - 1) {
+                ScrollTrigger.create({
+                  trigger: card,
+                  start: "top top",
+                  end: () => `+=${window.innerHeight}`,
+                  pin: true,
+                  pinSpacing: false,
+                });
+
+                gsap.to(image, {
+                  "--pseudo-y": "-100%",
+                  scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse",
+                  },
+                  duration: 0.8,
+                  ease: "power3.out",
+                });
+
+                gsap.from(step, {
+                  opacity: 0,
+                  y: 40,
+                  scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse",
+                  },
+                  duration: 0.8,
+                  ease: "power3.out",
+                });
+
+                gsap.to(card, {
+                  scale: 0.7,
+                  rotateZ: -15,
+                  ease: "none",
+                  scrollTrigger: {
+                    trigger: processCards[index + 1],
+                    start: "top bottom",
+                    end: "top top",
+                    scrub: true,
+                  },
+                });
+              } else {
+                gsap.to(image, {
+                  "--pseudo-y": "-100%",
+                  scrollTrigger: {
+                    trigger: card,
+                    start: "top 60%",
+                    toggleActions: "play none none reverse",
+                  },
+                  duration: 1.2,
+                  ease: "power3.inOut",
+                });
+
+                gsap.from(step, {
+                  opacity: 0,
+                  y: 40,
+                  scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse",
+                  },
+                  duration: 0.8,
+                  ease: "power3.out",
+                });
+
+                ScrollTrigger.create({
+                  trigger: card,
+                  start: "top center",
+                  onEnter: () => {
+                    processSection.classList.remove("process--dark");
+                  },
+                  onLeaveBack: () => {
+                    processSection.classList.add("process--dark");
+                  },
+                });
+              }
+            });
+          });
+
+          processMm.add("(max-width: 768px)", () => {
+            processCards.forEach((card) => {
+              const image = card.querySelector<HTMLElement>(".process__image");
+              const step = card.querySelector<HTMLElement>(".process__step");
+
+              if (!image || !step) return;
+
+              gsap.to(image, {
+                "--pseudo-y": "-100%",
+                scrollTrigger: {
+                  trigger: card,
+                  start: "top 80%",
+                  toggleActions: "play none none reverse",
+                },
+                duration: 0.8,
+                ease: "power3.out",
+              });
+
+              gsap.from(step, {
+                opacity: 0,
+                y: 30,
+                scrollTrigger: {
+                  trigger: card,
+                  start: "top 80%",
+                  toggleActions: "play none none reverse",
+                },
+                duration: 0.6,
+                ease: "power3.out",
+              });
+            });
+          });
+
+          if (processCta) {
+            gsap.from(processCta, {
+              opacity: 0,
+              y: 20,
+              scrollTrigger: {
+                trigger: processCta,
+                start: "top 90%",
+                toggleActions: "play none none reverse",
+              },
+              duration: 0.6,
+              ease: "power3.out",
+            });
+          }
         }
 
         const socialProofSection = document.querySelector(".social-proof");
-        const socialHeadline = document.querySelector(".social-proof__headline");
+        const socialHeadline = document.querySelector(
+          ".social-proof__headline",
+        );
         const socialImages = document.querySelectorAll(".social-proof__image");
         const socialCta = document.querySelector(".social-proof__cta");
 
         if (socialProofSection) {
-          let hasEntered = false;
+          if (socialHeadline) {
+            gsap.from(socialHeadline, {
+              opacity: 0,
+              y: 40,
+              duration: 0.8,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: socialProofSection,
+                start: "top 80%",
+                toggleActions: "play none none none",
+              },
+            });
+          }
 
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting && !hasEntered) {
-                  hasEntered = true;
-
-                  if (socialHeadline) {
-                    gsap.from(socialHeadline, {
-                      opacity: 0,
-                      y: 40,
-                      duration: 0.8,
-                      ease: "power3.out",
-                    });
-                  }
-
-                  gsap.from(socialImages, {
-                    opacity: 0,
-                    y: 40,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    delay: 0.4,
-                    ease: "power3.out",
-                  });
-
-                  if (socialCta) {
-                    gsap.from(socialCta, {
-                      opacity: 0,
-                      y: 20,
-                      duration: 0.6,
-                      delay: 1.2,
-                      ease: "power3.out",
-                    });
-                  }
-                }
-              });
+          gsap.from(socialImages, {
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            stagger: 0.1,
+            delay: 0.4,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: socialProofSection,
+              start: "top 80%",
+              toggleActions: "play none none none",
             },
-            { threshold: 0.2 }
-          );
+          });
 
-          observer.observe(socialProofSection);
-          observers.push(observer);
+          if (socialCta) {
+            gsap.from(socialCta, {
+              opacity: 0,
+              y: 20,
+              duration: 0.6,
+              delay: 1.2,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: socialProofSection,
+                start: "top 80%",
+                toggleActions: "play none none none",
+              },
+            });
+          }
         }
 
         const finalCtaSection = document.querySelector(".final-cta");
         const finalImage = document.querySelector(".final-cta__image");
         const finalHeadline = document.querySelector(".final-cta__headline");
-        const finalSubheadline = document.querySelector(".final-cta__subheadline");
+        const finalSubheadline = document.querySelector(
+          ".final-cta__subheadline",
+        );
         const finalButtons = document.querySelector(".final-cta__buttons");
 
-        if (finalCtaSection && finalImage && finalHeadline && finalSubheadline) {
-          let hasEntered = false;
-
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting && !hasEntered) {
-                  hasEntered = true;
-
-                  const tl = gsap.timeline({
-                    defaults: { ease: "power3.out" },
-                  });
-
-                  tl.to(finalImage, {
-                    "--pseudo-y": "-100%",
-                    duration: 1.2,
-                    ease: "power3.inOut",
-                  })
-                    .from(
-                      finalHeadline,
-                      {
-                        opacity: 0,
-                        y: 60,
-                        duration: 0.8,
-                      },
-                      "-=0.6"
-                    )
-                    .from(
-                      finalSubheadline,
-                      {
-                        opacity: 0,
-                        y: 30,
-                        duration: 0.8,
-                      },
-                      "-=0.4"
-                    );
-
-                  if (finalButtons) {
-                    tl.from(
-                      finalButtons,
-                      {
-                        opacity: 0,
-                        y: 20,
-                        duration: 0.6,
-                      },
-                      "-=0.3"
-                    );
-                  }
-                }
-              });
+        if (
+          finalCtaSection &&
+          finalImage &&
+          finalHeadline &&
+          finalSubheadline
+        ) {
+          const tl = gsap.timeline({
+            defaults: { ease: "power3.out" },
+            scrollTrigger: {
+              trigger: finalCtaSection,
+              start: "top 70%",
+              toggleActions: "play none none none",
             },
-            { threshold: 0.3 }
-          );
+          });
 
-          observer.observe(finalCtaSection);
-          observers.push(observer);
+          tl.to(finalImage, {
+            "--pseudo-y": "-100%",
+            duration: 1.2,
+            ease: "power3.inOut",
+          })
+            .from(
+              finalHeadline,
+              {
+                opacity: 0,
+                y: 60,
+                duration: 0.8,
+              },
+              "-=0.6",
+            )
+            .from(
+              finalSubheadline,
+              {
+                opacity: 0,
+                y: 30,
+                duration: 0.8,
+              },
+              "-=0.4",
+            );
+
+          if (finalButtons) {
+            tl.from(
+              finalButtons,
+              {
+                opacity: 0,
+                y: 20,
+                duration: 0.6,
+              },
+              "-=0.3",
+            );
+          }
 
           const image = finalImage.querySelector("img");
           if (image) {
@@ -690,7 +727,6 @@ export default function HomeAnimations() {
       isMounted = false;
       intervals.forEach((id) => clearInterval(id));
       timeouts.forEach((id) => clearTimeout(id));
-      observers.forEach((observer) => observer.disconnect());
       ctx?.revert();
     };
   }, []);

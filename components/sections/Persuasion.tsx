@@ -6,7 +6,9 @@ export default function Persuasion() {
     <section className="persuasion">
       <div className="container">
         <div className="persuasion__header">
-          <h2 className="persuasion__headline">Real Experience. Real Results.</h2>
+          <h2 className="persuasion__headline">
+            Real Experience. Real Results.
+          </h2>
           <p className="persuasion__text">
             For more than three decades, BuildArt Global has delivered design
             and build solutions rooted in craftsmanship, innovation, and client
@@ -18,8 +20,6 @@ export default function Persuasion() {
         <div className="persuasion__grid">
           <div className="persuasion__image persuasion__image--hero">
             <Image
-              
-
               src="/assets/images/nrd-c3tNiAb098I-unsplash.jpg"
               alt="BuildArt Global Project"
               fill
@@ -36,9 +36,9 @@ export default function Persuasion() {
             />
           </div>
 
-           <div className="persuasion__image">
-             <Image
-              src="/assets/images/exhibit.jpg"
+          <div className="persuasion__image">
+            <Image
+              src="/assets/images/exhibition.jpg"
               alt="BuildArt Global Project"
               fill
               sizes="100vw"
@@ -49,12 +49,10 @@ export default function Persuasion() {
             <Image
               src="/assets/images/DSC00935.webp"
               alt="BuildArt Global Project"
-              fill 
+              fill
               sizes="100vw"
             />
           </div>
-
-         
 
           <div className="persuasion__image">
             <Image

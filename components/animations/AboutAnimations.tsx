@@ -54,9 +54,11 @@ export default function AboutAnimations() {
         ? "process"
         : "about-process";
       const processHeadline = processSection.querySelector(
-        `.${baseClass}__headline`
+        `.${baseClass}__headline`,
       );
-      const processCards = gsap.utils.toArray<HTMLElement>(`.${baseClass}__item`);
+      const processCards = gsap.utils.toArray<HTMLElement>(
+        `.${baseClass}__item`,
+      );
       const processCta = processSection.querySelector(`.${baseClass}__cta`);
 
       if (!processHeadline || processCards.length === 0) {
@@ -90,10 +92,10 @@ export default function AboutAnimations() {
       processCards.forEach((card, index) => {
         const cardElement = card as HTMLElement;
         const image = cardElement.querySelector<HTMLElement>(
-          `.${baseClass}__image`
+          `.${baseClass}__image`,
         );
         const step = cardElement.querySelector<HTMLElement>(
-          `.${baseClass}__step`
+          `.${baseClass}__step`,
         );
 
         if (!image || !step) return;
