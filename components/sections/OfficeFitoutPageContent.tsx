@@ -35,8 +35,8 @@ export const officeFitoutContent: ServicePageContentProps = {
       label: "Plan an Office Renovation",
     },
     secondaryCta: {
-      href: "/portfolio",
-      label: "View Commercial Projects",
+      href: "/office-fitout/budget-planner",
+      label: "Start Budget Planning",
     },
     trustLine:
       "Trusted partner for commercial renovation projects across Dubai and Abu Dhabi. Offices - Corporate Spaces - Commercial Interiors",
@@ -323,8 +323,8 @@ export const officeFitoutContent: ServicePageContentProps = {
       label: "Plan an Office Renovation",
     },
     secondaryCta: {
-      href: "/contact",
-      label: "Contact Our Commercial Team",
+      href: "/office-fitout/budget-planner",
+      label: "Start Budget Planning",
     },
     image: {
       src: "/assets/images/office-fit-13.jpg",
