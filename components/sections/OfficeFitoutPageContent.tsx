@@ -141,7 +141,7 @@ const officeFitoutContent: ServicePageContentProps = {
       "Electrical systems meet UAE regulations",
     ],
     image: {
-      src: "/assets/images/home/image20.webp",
+      src: "/assets/images/office-interior-5-01.jpg",
       alt: "Office Technical Integration",
     },
     closingText:
@@ -303,7 +303,7 @@ const officeFitoutContent: ServicePageContentProps = {
       },
     ],
     image: {
-      src: "/assets/images/office-interior-5-01.jpg",
+      src: "/assets/images/office-interior-40-01.jpg",
       alt: "Commercial Fit-Out",
     },
   },
@@ -320,7 +320,7 @@ const officeFitoutContent: ServicePageContentProps = {
       label: "Contact Our Commercial Team",
     },
     image: {
-        src: "/assets/images/office-interior-40-01.jpg",
+        src: "/assets/images/image20.webp",
       alt: "BuildArt Global Project",
     },
   },
