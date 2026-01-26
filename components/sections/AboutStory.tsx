@@ -17,7 +17,7 @@ export default function AboutStory() {
             </p>
             <p>
               With industry experience rooted in decades of hands-on work since
-              1987, our team brings together expertise across design, fit-out,
+              2009, our team brings together expertise across design, fit-out,
               joinery, exhibitions, electrical systems, and technical
               integration.
             </p>

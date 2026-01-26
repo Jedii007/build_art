@@ -220,7 +220,7 @@ export const exhibitionsContent: ServicePageContentProps = {
         description:
           "Fabrication, electrical preparation, and quality checks managed under strict timelines.",
         image: {
-          src: "/assets/images/plan.png",
+          src: "/assets/images/Exhibition-Workshop.jpg",
           alt: "Production & Build",
         },
       },
