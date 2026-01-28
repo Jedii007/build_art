@@ -81,8 +81,8 @@ export default function SocialProof() {
           </div>
 
           <div className="social-proof__cta-wrapper">
-            <Link href="/portfolio" className="social-proof__cta">
-              View Full Portfolio →
+            <Link href="/contact" className="social-proof__cta">
+              Start a Project →
             </Link>
           </div>
         </div>

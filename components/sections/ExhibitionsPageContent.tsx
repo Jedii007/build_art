@@ -340,8 +340,8 @@ export const exhibitionsContent: ServicePageContentProps = {
       ],
     ],
     cta: {
-      href: "/portfolio",
-      label: "View Exhibition Projects",
+      href: "/contact",
+      label: "Discuss an Exhibition Stand",
     },
   },
   faq: {

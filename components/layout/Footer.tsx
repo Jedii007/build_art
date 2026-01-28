@@ -22,7 +22,6 @@ export default function Footer() {
             <Link href="/exhibitions">Exhibitions</Link>
             <Link href="/office-fitout">Office Fit-Out</Link>
             <Link href="/home-interiors">Home Interiors</Link>
-            <Link href="/portfolio">Portfolio</Link>
             <Link href="/contact">Contact</Link>
           </nav>
 
