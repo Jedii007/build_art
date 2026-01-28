@@ -21,7 +21,7 @@ export const homeInteriorsContent: ServicePageContentProps = {
     description:
       "We design and deliver bespoke residential interiors that balance aesthetics, comfort, and functionality - thoughtfully planned, technically sound, and executed with care from start to finish. From layout and finishes to lighting and electrical integration, we manage the entire process so your home feels considered, calm, and complete.",
     image: {
-      src: "/assets/images/home/image12.png",
+      src: "/assets/images/image12.png",
       alt: "Home Fit-Out & Residential Interiors",
     },
     primaryCta: {
