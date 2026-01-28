@@ -35,8 +35,8 @@ export const homeInteriorsContent: ServicePageContentProps = {
       label: "Plan a Home Fit-Out",
     },
     secondaryCta: {
-      href: "/portfolio",
-      label: "View Residential Projects",
+      href: "/contact",
+      label: "Talk to Our Team",
     },
     trustLine:
       "Trusted residential design and build partner across Dubai and Abu Dhabi. Villas - Apartments - Townhouses - Private Residences",
