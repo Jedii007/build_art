@@ -78,7 +78,7 @@ export const homeInteriorsContent: ServicePageContentProps = {
   scope: {
     headline: "Our Residential Fit-Out Scope",
     image: {
-      src: "/assets/images/home-interior-3.jpg",
+      src: "/assets/images/home/image31.png",
       alt: "Residential Fit-Out Scope",
     },
     imageText:
