@@ -585,19 +585,6 @@ export default function ServicePageContent({
               </div>
             ))}
           </div>
-
-          {portfolio.cta ? (
-            <div className="container">
-              <div className="exhibition__portfolio-cta">
-                <Link
-                  href={portfolio.cta.href}
-                  className="exhibition__portfolio-button"
-                >
-                  {portfolio.cta.label}
-                </Link>
-              </div>
-            </div>
-          ) : null}
         </section>
       ) : null}
 
