@@ -5,14 +5,20 @@ import ServicePageContent, {
 const homeProcessImages = [
   "/assets/images/image1.png",
   "/assets/images/image35.png",
-  "/assets/images/image3.png",
-  "/assets/images/image4.png",
-  "/assets/images/image5.png",
+  "/assets/images/home-interior-6.jpg",
+  "/assets/images/home-interior-8.png",
+  "/assets/images/home-interior-13.jpg",
 ];
 
 const homePortfolioImages = [
-  ["/assets/images/image28.png", "/assets/images/image33.png"],
-  ["/assets/images/image10.png", "/assets/images/image11.png"],
+  [
+    "/assets/images/home-interior-14.jpg",
+    "/assets/images/home-interior-16.jpg",
+  ],
+  [
+    "/assets/images/home-interior-17.jpg",
+    "/assets/images/home-interior-15.jpg",
+  ],
 ];
 
 export const homeInteriorsContent: ServicePageContentProps = {
@@ -21,7 +27,7 @@ export const homeInteriorsContent: ServicePageContentProps = {
     description:
       "We design and deliver bespoke residential interiors that balance aesthetics, comfort, and functionality - thoughtfully planned, technically sound, and executed with care from start to finish. From layout and finishes to lighting and electrical integration, we manage the entire process so your home feels considered, calm, and complete.",
     image: {
-      src: "/assets/images/image12.png",
+      src: "/assets/images/home/image2.png",
       alt: "Home Fit-Out & Residential Interiors",
     },
     primaryCta: {
@@ -72,13 +78,13 @@ export const homeInteriorsContent: ServicePageContentProps = {
   scope: {
     headline: "Our Residential Fit-Out Scope",
     image: {
-      src: "/assets/images/image31.png",
+      src: "/assets/images/home-interior-3.jpg",
       alt: "Residential Fit-Out Scope",
     },
     imageText:
       "Design - Build - Electrical - Lighting. We provide a fully integrated home fit-out solution, including:",
     contentImage: {
-      src: "/assets/images/home/image32.png",
+      src: "/assets/images/home-interior-4.jpg",
       alt: "Residential Fit-Out Scope",
     },
     listHeadline: "Our residential services include:",
@@ -136,7 +142,7 @@ export const homeInteriorsContent: ServicePageContentProps = {
       "Spaces feel warm, balanced, and easy to live in",
     ],
     image: {
-      src: "/assets/images/home/image34.png",
+      src: "/assets/images/home-interior-7.jpg",
       alt: "Residential Lighting & Electrical",
     },
     closingText:
@@ -200,7 +206,7 @@ export const homeInteriorsContent: ServicePageContentProps = {
   why: {
     headline: "Why Homeowners Choose BuildArt Global",
     image: {
-      src: "/assets/images/image35.png",
+      src: "/assets/images/home-interior-10.jpg",
       alt: "Residential Interiors",
     },
     caption: "Attention to detail. Respect for your space.",
@@ -257,7 +263,7 @@ export const homeInteriorsContent: ServicePageContentProps = {
     closingText:
       "Even though a home project is personal, it deserves the same level of structure and professionalism as any major build.",
     image: {
-      src: "/assets/images/image10.png",
+      src: "/assets/images/home-interior-11.jpg",
       alt: "Residential Experience",
     },
     caption: "The same discipline as major builds, applied to homes.",
@@ -315,7 +321,7 @@ export const homeInteriorsContent: ServicePageContentProps = {
       label: "Contact Our Residential Team",
     },
     image: {
-      src: "/assets/images/image13.png",
+      src: "/assets/images/home-interior-cta.jpg",
       alt: "BuildArt Global Project",
     },
   },
